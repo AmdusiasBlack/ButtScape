@@ -1,13 +1,16 @@
-package com.example;
+package com.ButtScape;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class ExamplePluginTest
+public class ButtScapeTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(ExamplePlugin.class);
+		ExternalPluginManager.loadBuiltin(ButtScapePlugin.class);
 		RuneLite.main(args);
+
+
+
 	}
 }

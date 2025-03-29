@@ -21,13 +21,15 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok:1.18.30'
 	annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
+	implementation 'io.github.blackspherefollower:buttplug4j.connectors.jetty.websocket.client:3.1.105'
+	testImplementation 'io.github.blackspherefollower:buttplug4j.connectors.jetty.websocket.client:3.1.105'
 	testImplementation 'junit:junit:4.12'
 	testImplementation group: 'net.runelite', name:'client', version: runeLiteVersion
 	testImplementation group: 'net.runelite', name:'jshell', version: runeLiteVersion
 }
 
-group = 'com.example'
-version = '1.0-SNAPSHOT'
+group = 'io.github.blackspherefollower'
+version = '3.1.105'
 
 tasks.withType(JavaCompile).configureEach {
 	options.encoding = 'UTF-8'
@@ -58,4 +60,12 @@ tasks.register('shadowJar', Jar) {
 	group = BasePlugin.BUILD_GROUP
 	archiveClassifier.set('shadow')
 	archiveFileName.set("${rootProject.name}-${project.version}-all.jar")
+}
+sourceSets {
+	main {
+		resources.srcDirs("src/main/resources")
+	}
+}
+tasks.processResources {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE // Or use DuplicatesStrategy.INCLUDE depending on your needs
 }
